@@ -11,36 +11,38 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME := libftprintf.a
+NAME = libftprintf.a
 
-SRCS := ft_printf.c \
-bonus := \
-OBJSD := objs/
-LIBFT_PATH := libft/
-LIBFT_SRCS := ft_putchar_fd.c \
-LIBFT_OBJS := $(LIBFT_SRCS:.c=.o)
-LIBFT_OBJS := $(addprefix $(OBJSD), $(LIBFT_OBJS))
-OBJS := $(SRCS:.c=.o)
-OBJS := $(addprefix $(OBJSD), $(OBJS))
-OBJSBONUS := $(bonus:.c=.o)
-CC := gcc -c -o
-LINKER := ar rcs
-FLAGS := -Wall -Wextra -Werror
+SRCS = ft_printf.c 
+SRCSD = srcs/
+bonus = \
+
+OBJSD = objs/
+
+LIBFT_PATH = libft/
+LIBFT_SRCS = ft_putchar_fd.c 
+LIBFT_OBJS = $(addprefix $(OBJSD), $(LIBFT_SRCS:.c=.o))
+OBJS = $(addprefix $(OBJSD), $(SRCS:.c=.o))
+OBJSBONUS = $(bonus:.c=.o)
+
+CC = gcc -c -o
+LINKER = ar rcs
+FLAGS = -Wall -Wextra -Werror
 
 $(NAME):	$(OBJS) $(LIBFT_OBJS)
-	$(LINKER) $(NAME) $(OBJS) $(LIBFT_OBJS)
+	$(LINKER) $@ $(OBJS) $(LIBFT_OBJS)
 
-all:	$(NAME)
+# bonus:	$(OBJSBONUS) $(OBJS)
+#		$(LINKER) $(NAME) $(OBJSBONUS) $(OBJS)
 
-bonus:	$(OBJSBONUS) $(OBJS)
-		$(LINKER) $(NAME) $(OBJSBONUS) $(OBJS)
-
-$(OBJSD)%.o: $(SRCS)%.c
+$(OBJSD)%.o: $(SRCSD)%.c
 	mkdir -p $(OBJSD)
-	$(CC) $@ $(FLAGS) $<
+	$(CC) $@ $< $(FLAGS) 
 
 $(OBJSD)%.o: $(LIBFT_PATH)%.c
-   $(CC) $@ $(FLAGS) $<
+	$(CC) $@ $< $(FLAGS)
+
+all: $(NAME)
 
 clean:
 	rm -rf $(OBJSD) $(OBJSBONUS)
