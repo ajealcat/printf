@@ -1,4 +1,5 @@
 # **************************************************************************** #
+:q
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
@@ -6,52 +7,43 @@
 #    By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/10 14:14:21 by ajearuth          #+#    #+#              #
-#    Updated: 2021/08/13 14:28:24 by ajearuth         ###   ########.fr        #
+#    Updated: 2021/08/16 10:38:25 by ajearuth         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-#############################################
-#                                           #
-#               Coucou Github !             #
-#         Qu'est ce qu'on ferait pas        #
-#             pour pas bosser !!            #
-#                                           #
-#############################################
-
-
 NAME := libftprintf.a
 
-SRCS := \
+SRCS := ft_printf.c \
 bonus := \
-
-LIBDIR := libft/
-LIBSRC :=
-
-LIBOBJS := $(LIBSRC:.c=.o)
-LIBOBJS := $(addprefix $(OBJSD), $(LIBOBJS))
+OBJSD := objs/
+LIBFT_PATH := libft/
+LIBFT_SRCS := ft_putchar_fd.c \
+LIBFT_OBJS := $(LIBFT_SRCS:.c=.o)
+LIBFT_OBJS := $(addprefix $(OBJSD), $(LIBFT_OBJS))
 OBJS := $(SRCS:.c=.o)
 OBJS := $(addprefix $(OBJSD), $(OBJS))
-OBJSBONUS := $(bonus: .c=.o)
-
+OBJSBONUS := $(bonus:.c=.o)
 CC := gcc -c -o
 LINKER := ar rcs
-FLAG := -Wall -Wextra -Werror
+FLAGS := -Wall -Wextra -Werror
 
-$(NAME):	$(OBJS)
-	$(LINKER) $(NAME) $(OBJS)
-
-# Manque des trucs pour que ca marche
+$(NAME):	$(OBJS) $(LIBFT_OBJS)
+	$(LINKER) $(NAME) $(OBJS) $(LIBFT_OBJS)
 
 all:	$(NAME)
 
 bonus:	$(OBJSBONUS) $(OBJS)
 		$(LINKER) $(NAME) $(OBJSBONUS) $(OBJS)
 
-$(OBJSD)%.o:	$(SRCSD)%.c
-	$(CC) $@^ $(FLAGS)
+$(OBJSD)%.o: $(SRCS)%.c
+	mkdir -p $(OBJSD)
+	$(CC) $@ $(FLAGS) $<
+
+$(OBJSD)%.o: $(LIBFT_PATH)%.c
+   $(CC) $@ $(FLAGS) $<
 
 clean:
-	rm -rf $(OBJS) $(OBJSBONUS)
+	rm -rf $(OBJSD) $(OBJSBONUS)
 
 fclean:	clean
 	rm -rf $(NAME)

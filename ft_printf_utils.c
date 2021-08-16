@@ -1,20 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/10 15:05:10 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/08/16 10:36:42 by ajearuth         ###   ########.fr       */
+/*   Created: 2021/08/16 07:51:04 by ajearuth          #+#    #+#             */
+/*   Updated: 2021/08/16 07:51:24 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
-# include "libft.h"
-# include <stdarg.h>
+pour les fonctions en plus si besoin
 
-int	ft_printf(const *char, ...);
-
-#endif
