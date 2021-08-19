@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 14:42:58 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/08/17 11:58:16 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/08/19 12:17:20 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,28 @@ static int	ft_is_charset(char *str)
 		i++;
 	}
 	return (0);
+}
+
+void ft_cut(const char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '%')
+	{
+		write(1, str[i], 1);
+		i++;
+	}
+	if (str[i] == '%')
+	{
+		while (ft_is_charset(str) != 1)
+			i++;
+	}
+	while (str[i])
+	{
+		write(1, str[i], 1);
+		i++
+	}
 }
 
 int	ft_printf(const char *str, ...)
