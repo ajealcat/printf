@@ -6,9 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 07:51:04 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/08/16 07:51:24 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/08/26 10:30:37 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-pour les fonctions en plus si besoin
 
