@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 14:42:58 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/08/27 12:39:06 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/08/27 12:50:46 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 int	ft_printf(const char *str, ...)
 {
 	int		i;
-	int		ret;
 	int		count;
 	va_list	arg;
 
 	va_start(arg, str);
 	i = 0;
-	ret = 0;
 	count = 0;
 	while (str[i])
 	{
@@ -38,7 +36,7 @@ int	ft_printf(const char *str, ...)
 		++i;
 	}
 	va_end(arg);
-	return (ret + count);
+	return (count);
 }
 
 int		ft_parse_and_count(char flag, va_list arg)
@@ -47,7 +45,7 @@ int		ft_parse_and_count(char flag, va_list arg)
 
 	count = 0;
 	if (flag == '%')
-		count = ft_print_percentage(void);
+		count = ft_print_percentage();
 	else if (flag == 'c')
 		count = ft_print_c(arg);
 	else if (flag == 's')

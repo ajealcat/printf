@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 07:51:04 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/08/27 12:39:12 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/08/27 12:52:34 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_print_c(va_list arg)
 {
 	char	c;
 
-	c = va_arg(arg, int);
+	c = (char)va_arg(arg, int);
 	ft_putchar_fd(c, 1);
 	return (1);
 }
@@ -35,7 +35,7 @@ int	ft_print_s(va_list arg)
 	count = 0;
 	str = va_arg(arg, char *);
 	if (str == NULL)
-        return (0);
+         return (0);
 	else
 	{
 		ft_putstr_fd(str, 1);
