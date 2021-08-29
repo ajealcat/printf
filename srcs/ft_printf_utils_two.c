@@ -6,11 +6,21 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 13:34:31 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/08/29 15:18:49 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/08/29 15:35:41 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
+
+int	ft_print_p(va_list arg)
+{
+	void	*adress;
+
+	adress = va_arg(arg, void *);
+	ft_putstr_fd("0x", 1);
+	ft_putnbr_base_fd(adress, "0123456789abcdef", 1);
+    return(ft_nbrlen((unsigned int)adress, 16) + 2);
+}
 
 int	ft_print_x(va_list arg)
 {
