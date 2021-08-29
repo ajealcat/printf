@@ -6,13 +6,13 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 15:05:10 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/08/29 13:32:09 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/08/29 15:10:30 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRINTF_H
 # define PRINTF_H
-# include "libft.h"
+# include "../libft/libft.h"
 # include <stdarg.h>
 
 int     ft_printf(const char *str, ...);
@@ -22,5 +22,8 @@ int     ft_print_c(va_list arg);
 int     ft_print_s(va_list arg);
 int     ft_print_d_i(va_list arg);
 int     ft_print_u(va_list arg);
+int     ft_print_x(va_list arg);
+int     ft_print_upp_x(va_list arg);
+int     ft_nbrlen(unsigned int nb, int base);
 
 #endif

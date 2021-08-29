@@ -13,14 +13,15 @@
 
 NAME = libftprintf.a
 
-SRCS = ft_printf.c 
+SRCS = ft_printf.c ft_printf_utils.c ft_printf_utils_two.c 
 SRCSD = srcs/
 bonus = \
 
 OBJSD = objs/
 
 LIBFT_PATH = libft/
-LIBFT_SRCS = ft_putchar_fd.c 
+LIBFT_SRCS = ft_putchar_fd.c ft_strlen.c ft_putstr_fd.c ft_putnbr_fd.c ft_putnbr_base_fd.c \
+			ft_itoa.c
 LIBFT_OBJS = $(addprefix $(OBJSD), $(LIBFT_SRCS:.c=.o))
 OBJS = $(addprefix $(OBJSD), $(SRCS:.c=.o))
 OBJSBONUS = $(bonus:.c=.o)
@@ -31,9 +32,6 @@ FLAGS = -Wall -Wextra -Werror
 
 $(NAME):	$(OBJS) $(LIBFT_OBJS)
 	$(LINKER) $@ $(OBJS) $(LIBFT_OBJS)
-
-# bonus:	$(OBJSBONUS) $(OBJS)
-#		$(LINKER) $(NAME) $(OBJSBONUS) $(OBJS)
 
 $(OBJSD)%.o: $(SRCSD)%.c
 	mkdir -p $(OBJSD)
