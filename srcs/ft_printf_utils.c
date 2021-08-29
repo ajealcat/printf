@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 07:51:04 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/08/27 12:52:34 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/08/29 13:32:20 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,22 @@ int	ft_print_s(va_list arg)
 		count = ft_strlen(str);
 	}
 	return (count);
+}
+
+int	ft_print_d_i(va_list arg)
+{
+	int	nb;
+
+	nb = va_arg(arg, int);
+	ft_putnbr_fd(nb, 1);
+	return(ft_strlen(ft_itoa(nb)));
+}
+
+int	ft_print_u(va_list arg)
+{
+	unsigned int	nb;
+
+	nb = va_arg(arg, unsigned int);
+	ft_putnbr_uint(nb, 1);
+	return (ft_count_uint(nb));
 }

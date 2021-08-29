@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 14:42:58 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/08/27 12:50:46 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/08/29 13:24:18 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,8 @@ int		ft_parse_and_count(char flag, va_list arg)
 		count = ft_print_c(arg);
 	else if (flag == 's')
 		count = ft_print_s(arg);
-	else if (flag == 'd')
-		count = ft_print_d(arg);
-	else if (flag == 'i')
-		count = ft_print_i(arg);
+	else if (flag == 'd' || flag == 'i')
+		count = ft_print_d_i(arg);
 	else if (flag == 'u')
 		count = ft_print_u(arg);
 	else if (flag == 'p')
