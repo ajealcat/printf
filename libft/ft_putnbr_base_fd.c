@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 11:37:12 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/08/29 15:19:05 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/08/29 15:56:01 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	ft_putnbr_base_fd(int nbr, const char *base, int fd)
 			nb = nb * (-1);
 		}
 		if (nb < ft_strlen(base) && nb >= 0)
-			ft_putchar(base[nb], fd);
+			ft_putchar_fd(base[nb], fd);
 		else
 		{
 			ft_putnbr_base_fd(nb / ft_strlen(base), base, fd);
