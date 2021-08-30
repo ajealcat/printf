@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*   ft_printf_strings.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 07:51:04 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/08/29 15:39:03 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/08/30 10:17:09 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int ft_print_percentage(void)
 {
@@ -42,22 +42,4 @@ int	ft_print_s(va_list arg)
 		count = ft_strlen(str);
 	}
 	return (count);
-}
-
-int	ft_print_d_i(va_list arg)
-{
-	int	nb;
-
-	nb = va_arg(arg, int);
-	ft_putnbr_fd(nb, 1);
-	return(ft_strlen(ft_itoa(nb)));
-}
-
-int	ft_print_u(va_list arg)
-{
-	unsigned int	nb;
-
-	nb = va_arg(arg, unsigned int);
-	ft_putnbr_uint_fd(nb, 1);
-	return (ft_nbrlen(nb, 10));
 }

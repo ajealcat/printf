@@ -6,13 +6,13 @@
 #    By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/10 14:14:21 by ajearuth          #+#    #+#              #
-#    Updated: 2021/08/29 15:35:59 by ajearuth         ###   ########.fr        #
+#    Updated: 2021/08/30 11:31:28 by ajearuth         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-SRCS = ft_printf.c ft_printf_utils.c ft_printf_utils_two.c 
+SRCS = ft_printf.c ft_printf_numbers.c ft_printf_strings.c ft_printf_return.c
 SRCSD = srcs/
 bonus = \
 

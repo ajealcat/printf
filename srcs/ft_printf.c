@@ -6,11 +6,11 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 14:42:58 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/08/29 13:24:18 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/08/30 11:31:30 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_printf(const char *str, ...)
 {
