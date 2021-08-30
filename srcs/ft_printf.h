@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 15:05:10 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/08/30 11:31:32 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/08/30 13:47:02 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,8 @@ int     ft_print_upp_x(va_list arg);
 int     ft_nbrlen(int nb, int base);
 int		ft_unbrlen(unsigned int nb, int base);
 void	ft_putnbr_uint_base_fd(unsigned int nb, const char *base, int fd);
+int	    ft_unbrlen_p(uint64_t nb, int base);
+void	ft_putnbr_uint_base_p_fd(uint64_t nb, const char *base, int fd);
+
 
 #endif

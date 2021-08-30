@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 10:12:44 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/08/30 11:31:25 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/08/30 13:46:59 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,10 @@ int	ft_print_upp_x(va_list arg)
 }
 int	ft_print_p(va_list arg)
 {
-	void	*adress;
+	uint64_t	adress;
 
-	adress = va_arg(arg, void *);
+	adress = va_arg(arg, uint64_t);
 	ft_putstr_fd("0x", 1);
-	ft_putnbr_uint_base_fd((unsigned long)adress, "0123456789abcdef", 1);
-    return(ft_unbrlen((unsigned long)adress, 16) + 2);
+	ft_putnbr_uint_base_p_fd(adress, "0123456789abcdef", 1);
+    return(ft_unbrlen_p(adress, 16) + 2);
 }
