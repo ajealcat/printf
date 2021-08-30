@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 07:51:04 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/08/30 10:17:09 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/08/30 13:58:34 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,10 @@ int	ft_print_s(va_list arg)
 	count = 0;
 	str = va_arg(arg, char *);
 	if (str == NULL)
-         return (0);
+	{
+		ft_putstr_fd("(null)", 1);
+        return (6);
+	}
 	else
 	{
 		ft_putstr_fd(str, 1);
