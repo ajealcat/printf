@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 14:42:58 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/08/30 13:47:01 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/08/30 14:05:16 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_printf(const char *str, ...)
 	return (count);
 }
 
-int		ft_parse_and_count(char flag, va_list arg)
+int	ft_parse_and_count(char flag, va_list arg)
 {
 	int	count;
 

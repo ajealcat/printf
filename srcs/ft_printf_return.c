@@ -6,43 +6,42 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 13:34:31 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/08/30 13:46:58 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/08/30 14:12:52 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-
-int ft_nbrlen(int nb, int base)
+int	ft_nbrlen(int nb, int base)
 {
-    int  i;
+	int	i;
 
-    i = 0;
+	i = 0;
 	if (nb < 0)
 		++i;
 	if (nb == 0)
-		return(1);
-    while(nb != 0)
-    {
-        nb = nb / base;
-        ++i;
-    }
-    return(i);
+		return (1);
+	while (nb != 0)
+	{
+		nb = nb / base;
+		++i;
+	}
+	return (i);
 }
 
 int	ft_unbrlen(unsigned int nb, int base)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	if (nb == 0)
-		return(1);
-	while(nb != 0)
+		return (1);
+	while (nb != 0)
 	{
-		nb = nb / base;	
+		nb = nb / base;
 		++i;
 	}
-	return(i);
+	return (i);
 }
 
 void	ft_putnbr_uint_base_fd(unsigned int nb, const char *base, int fd)
@@ -58,17 +57,17 @@ void	ft_putnbr_uint_base_fd(unsigned int nb, const char *base, int fd)
 
 int	ft_unbrlen_p(uint64_t nb, int base)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	if (nb == 0)
-		return(1);
-	while(nb != 0)
+		return (1);
+	while (nb != 0)
 	{
-		nb = nb / base;	
+		nb = nb / base;
 		++i;
 	}
-	return(i);
+	return (i);
 }
 
 void	ft_putnbr_uint_base_p_fd(uint64_t nb, const char *base, int fd)
