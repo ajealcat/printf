@@ -6,11 +6,23 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 11:37:12 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/08/29 15:56:01 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/08/30 09:24:53 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+
+static int	ft_strlen_spe(const char *str)
+{
+	const char	*p;
+
+	p = str;
+	while (*str)
+		++str;
+	return (str - p);
+}
+
 
 static int	ft_checkbase(const char *base)
 {
@@ -48,7 +60,7 @@ void	ft_putnbr_base_fd(int nbr, const char *base, int fd)
 			ft_putchar_fd('-', fd);
 			nb = nb * (-1);
 		}
-		if (nb < ft_strlen(base) && nb >= 0)
+		if (nb < ft_strlen_spe(base) && nb >= 0)
 			ft_putchar_fd(base[nb], fd);
 		else
 		{
